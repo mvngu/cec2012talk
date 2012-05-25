@@ -131,7 +131,7 @@
     \end{itemize}
 
   \item Communities are matched across time in order to infer the
-    history of a community from birth to death.
+    history of a ``dynamic community'' from birth to death.
   \end{itemize}
 
   \begin{figure}
@@ -166,6 +166,36 @@
     \item stagnant: no change in size at all between two consecutive
       snapshots
     \end{itemize}
+  \end{itemize}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiments and methods}
+
+\frame{
+  \frametitle{Experiments and methods}
+  %%
+  \begin{itemize}
+  \item We constructed from the Genetic Programming bibliography
+    yearly snapshots of a network of scientific co-authorship.
+
+  \item From each snapshot, we extracted communities using the
+    algorithm of Blondel~et~al.~\cite{BlondelEtAl2008a}.
+
+  \item Communities were matched using the Jaccard coefficient
+    $J(A,B) = |A \cap B| \big/ |A \cup B|$ to compute a measure of
+    overlap.
+
+  \item Two communities match each other if they had an overlap score
+    of $J(A,B) > 0.3$.  In that case, we treated $A$ and $B$ as nodes
+    and created a directed edge from $A$ to $B$.
+
+  \item Extract the history of each dynamic community by doing
+    depth-first searches from communities that occurred in the
+    earliest snapshots, and work our way up to communities that
+    occurred in the latest snapshots.
   \end{itemize}
 }
 
