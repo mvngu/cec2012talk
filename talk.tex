@@ -179,11 +179,13 @@
   %%
   \begin{itemize}
   \item We constructed from the Genetic Programming~(GP) bibliography
-    yearly snapshots of a network of scientific co-authorship.
+    yearly snapshots of a network of scientific co-authorship.  We
+    have yearly snapshots from $1950$ up to and including $2011$.
 
   \item From each snapshot, we extracted communities using the
-    algorithm of Blondel~et~al.~\cite{BlondelEtAl2008a}.  We also used
-    the algorithm of Raghavan~et~al.~\cite{RaghavanEtAl2007}.
+    algorithms of Blondel~et~al.~\cite{BlondelEtAl2008a} and
+    Raghavan~et~al.~\cite{RaghavanEtAl2007}.  We set the minimum
+    community size to $s_{\min} = 1, \dots, 10$.
 
   \item Communities were matched using the Jaccard coefficient
     $J(A,B) = |A \cap B| \big/ |A \cup B|$ to compute a measure of
@@ -225,6 +227,33 @@
     where $\alpha \approx 2.54$~(solid line) and
     $\alpha \approx 2.72$~(dashed line).}
   \end{figure}
+}
+%%
+%%
+\frame{
+  \frametitle{Results: effects of $s_{\min}$ on community events}
+  %%
+  We considered only yearly snapshots from $1995$ to $2011$.
+  %%
+  \begin{itemize}
+  \item The proportion of birth $b$ decays as
+    $b \sim \exp(\alpha + \beta x)$ and $s_{\min}$ did not seem to
+    affect this trend.
+
+  \item The proportion of expansion $e$ follows two regimes, depending
+    on the values of $s_{\min}$.  The cases $s_{\min} = 1,2,3,4,6,7$
+    resulted in the linear decay $e \sim \alpha x + \beta$.  The
+    cases $s_{\min} = 5,8,9,10$ resulted in the non-linear decay
+    $e \sim \sum_{i=0}^5 \alpha_i x^i$.
+
+  \item The proportions of direct $d$ and stagnant $s$ both followed
+    a pattern of linear growth.  The values of $s_{\min}$ did not seem
+    to affect this trend for $d$ and $s$.
+
+  \item The values of $s_{\min}$ did not seem to affect the trends in
+    the proportion of community split.  We detected splits only since
+    the $2001$ snapshot, irrespective of the value of $s_{\min}$.
+  \end{itemize}
 }
 
 
