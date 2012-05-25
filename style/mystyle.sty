@@ -1,0 +1,70 @@
+%% Copyright (C) 2012 Minh Van Nguyen <mvngu.name@gmail.com>
+%% This work is licensed under a the GNU Free Documentation License version
+%% 1.3.  For the full terms of the license, see
+%% http://www.gnu.org/licenses/fdl.html
+
+\setbeamertemplate{navigation symbols}{}
+%% numbering figures and tables
+\usepackage{pgffor}
+\setbeamertemplate{caption}[numbered]
+
+%% Package for mathematical symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{color,graphicx}
+
+%% For typesetting code listings
+\usepackage{listings}
+\lstset{language={},
+  keepspaces=true,
+  xleftmargin=5mm,
+  xrightmargin=5mm,
+  basicstyle=\ttfamily,
+  frame=single,
+  framesep=2mm,
+  framerule=0pt,
+  %% frameround=tttt,
+  columns=flexible,
+  backgroundcolor=\color[gray]{0.9},
+  rulesepcolor=\color{black},
+  %% numbers=left,
+  numberstyle=\footnotesize,
+  language=Pascal
+}
+
+%% Package for drawing figures
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix,arrows,decorations.pathreplacing,%
+  decorations.pathmorphing}
+
+%% beautifying theorems and such environments
+\useinnertheme[shadow]{rounded}
+\usecolortheme{rose}
+
+%% \useoutertheme{infolines}
+%% \useoutertheme{miniframes}
+%% \useoutertheme{smoothbars}
+
+%% Format date in the form 12 March 2007, for example.
+\usepackage{datetime}
+\newdateformat{auDateFormat}{%
+  \twodigit{\THEDAY}~\monthname[\THEMONTH]~\THEYEAR
+}
+\auDateFormat
+
+\useinnertheme{circles}
+\usefonttheme[only large]{structurebold}
+\setbeamercolor{structure}{fg=blue}
+
+%% Slide footer. This appears at the bottom of every slide.
+\setbeamertemplate{footline} {
+  \insertshortauthor[width=2.0cm,center]
+  \insertshorttitle[width=9.0cm,center]
+  \hspace{1.25cm}
+  \insertframenumber
+  \vspace{0.1cm}
+}
