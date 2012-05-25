@@ -178,11 +178,12 @@
   \frametitle{Experiments and methods}
   %%
   \begin{itemize}
-  \item We constructed from the Genetic Programming bibliography
+  \item We constructed from the Genetic Programming~(GP) bibliography
     yearly snapshots of a network of scientific co-authorship.
 
   \item From each snapshot, we extracted communities using the
-    algorithm of Blondel~et~al.~\cite{BlondelEtAl2008a}.
+    algorithm of Blondel~et~al.~\cite{BlondelEtAl2008a}.  We also used
+    the algorithm of Raghavan~et~al.~\cite{RaghavanEtAl2007}.
 
   \item Communities were matched using the Jaccard coefficient
     $J(A,B) = |A \cap B| \big/ |A \cup B|$ to compute a measure of
@@ -197,6 +198,33 @@
     earliest snapshots, and work our way up to communities that
     occurred in the latest snapshots.
   \end{itemize}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+\frame{
+  \frametitle{Results: distribution of community size}
+  %%
+  \begin{itemize}
+  \item The distribution of community size follows a power-law of the
+    form $p_k \sim k^{-\alpha}$.  This suggests the presence of
+    self-similarity in the GP co-authorship network.
+    %% Self-similarity is a typical feature of fractals.  In the long
+    %% run, a power-law regime suggests that the larger is a community
+    %% of GP co-authors, the more likely that the community would
+    %% attract new co-authors.
+  \end{itemize}
+
+  \begin{figure}
+  \centering
+  \includegraphics[scale=0.8]{image/noeditors-commsize-dist}
+  \caption{Power-law regime in the distribution of community size,
+    where $\alpha \approx 2.54$~(solid line) and
+    $\alpha \approx 2.72$~(dashed line).}
+  \end{figure}
 }
 
 
