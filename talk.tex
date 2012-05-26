@@ -60,6 +60,9 @@
     %% software network, a community might be a group of functions or
     %% modules that invoke each other more often than other functions
     %% or modules in a software package.
+
+  \item Some groups of members within a network are more connected
+    amongst themselves than to members outside of the group.
   \end{itemize}
 
   \begin{figure}[!bp]
@@ -78,6 +81,7 @@
   \frametitle{Motivation and aim}
   %%
   \begin{itemize}
+  %% One motivation for modelling communities over time is to:
   \item Uncover principles of community evolution, which in turn would
     allow us to:
     \begin{itemize}
@@ -88,6 +92,7 @@
       researchers~\cite{PallaEtAl2007}.
     \end{itemize}
 
+  %% Our aim in this talk is to answer the following question.
   \item How does community size affect the evolution of communities in
     networks?
     %% The above general question can be answered along two separate
@@ -122,6 +127,7 @@
   \frametitle{Background}
   %%
   \begin{itemize}
+  %% The evolution of communities can be modelled using a life-cycle.
   \item Communities evolve according to a
     life-cycle~\cite{GreeneEtAl2010,PallaEtAl2007}:
     \begin{itemize}
@@ -132,8 +138,17 @@
     \item merge \& split
     \end{itemize}
 
+  %% A dynamic community is inferred by matching communities across
+  %% snapshots.  We follow a chain of matches across time in order to
+  %% extract a dynamic community.  We can think of a dynamic community
+  %% as analogous to an association of people, such as a social club
+  %% or a professional association such as the IEEE or the ACM.  The
+  %% basic intuition is that, for two consecutive observations in the
+  %% history of an association, the observations capture the state of
+  %% an association at two consecutive timesteps.
   \item Communities are matched across time in order to infer the
-    history of a ``dynamic community'' from birth to death.
+    history of a ``dynamic community'' from birth to
+    death~\cite{GreeneEtAl2010}.
   \end{itemize}
 
   \begin{figure}
@@ -219,9 +234,13 @@
     form $p_k \sim k^{-\alpha}$.  This suggests the presence of
     self-similarity in the GP co-authorship network.
     %% Self-similarity is a typical feature of fractals.  In the long
-    %% run, a power-law regime suggests that the larger is a community
-    %% of GP co-authors, the more likely that the community would
-    %% attract new co-authors.
+    %% run, in order to maintain a power-law regime, some kind of
+    %% preferential attachment mechanism (``rich get richer'' effect)
+    %% should be at work in the GP co-authorship network.  That is,
+    %% one possible way for the GP co-authorship network to maintain
+    %% self-similarity in community size is to use the following
+    %% mechanism: the larger is a community, the more likely that the
+    %% community would attract new co-authors.
   \end{itemize}
 
   \begin{figure}
