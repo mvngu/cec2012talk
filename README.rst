@@ -1,3 +1,6 @@
+IEEE CEC 2012
+=============
+
 These are notes for a talk at the IEEE CEC 2012 conference.  Ensure
 you have a proper and working TeX/LaTeX installation. To compile the
 talk slides, issue the command::
